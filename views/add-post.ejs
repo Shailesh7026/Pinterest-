@@ -1,0 +1,30 @@
+
+    <%- include('common/navbar.ejs') -%>
+   
+    <!--------------------------->
+
+    <div class="create-pin">
+        <form action="" method="post" enctype="multipart/form-data">
+        <div class="form-div">
+                <div class="drag-drop">
+                    <span class="material-symbols-outlined message-drag-drop symbol">
+                        upload
+                        </span>
+
+                    <h4 class="message-drag-drop">choose a file or drag and drop it here</h4>
+
+                    <p class="message-drag-drop">We recommanded to upload high quality file like images under 20MB and videos under 200MB</p>
+
+                    <div id="preview-image"></div>
+                </div>
+                <div class="from-feilds">
+                    <input type="file" id="file-input" class="detail" name="file" required>
+                    <input type="text" class="detail" name="title" placeholder="Add a Title" required>
+                    <textarea class="detail" rows="5" maxlength="500" name="description" placeholder="Add a Description"></textarea>
+
+                    <input type="submit" name="submit"  id="submit" value="Publish">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="javascripts/add.js"></script>

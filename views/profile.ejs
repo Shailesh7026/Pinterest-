@@ -1,0 +1,82 @@
+<%- include('common/navbar.ejs') -%>
+
+  <link rel="stylesheet" href="stylesheets/profile.css">
+  <link rel="stylesheet" href="/stylesheets/feed.css">
+  </head>
+
+  <body>
+    <div class="profile-details">
+      <div class="profile-img-container">
+        <img class="profile-img" src="/images/uploads/<%= user.profileImage %>" alt="Profile image">
+        <div class="edit" id="edit"><span class="material-symbols-outlined">
+            edit
+          </span></div>
+      </div>
+      <div class="edit-form">
+        <form hidden action="/fileupload" id="file-form" method="post" enctype="multipart/form-data">
+          <input type="file" name="image" id="file-input" accept=".jpg, .jpeg, .png">
+        </form>
+      </div>
+      <h4 class="name">
+        <%= user.fullname %>
+      </h4>
+      <h4 class="name">
+        <%= user.displayName %>
+      </h4>
+      <p class="username">@ <%= user.username %>
+      </p>
+      <p>
+        <%= posts.length %> posts
+      </p>
+
+    </div>
+    <hr>
+    <div class="posts">
+
+      <div class="header">
+        <h2>My posts</h2>
+        <a href="/add-post"><span class="material-symbols-outlined">
+            add
+          </span>
+        </a>
+      </div>
+      <div class="feeds">
+        <% posts.forEach(post=> { %>
+          <div class="post-div-feed">
+            <a href="/postInfo/<%= post._id %>">
+              <div class="post-feed">
+                <div class="post-content">
+                  <% if (post.postFile.endsWith('.mp4')) { %>
+                    <video id="post-video" src="/images/uploads/<%= post.postFile %>" autoplay muted loop></video>
+                    <% } else { %>
+                      <img id="post-img" src="/images/uploads/<%= post.postFile %>" alt="post-img">
+                      <% } %>
+                </div>
+                <div class="hover-section">
+                  <div class="hover-glass"></div>
+                  <div class="save-btn-feed">Save</div>
+                  <div class="links">
+                    <div class="share">
+                      <span class="material-symbols-outlined icon">share</span>
+                    </div>
+                    <div class="download">
+                      <span class="material-symbols-outlined icon">download</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="post-info-feed">
+              <div class="title">
+                <p>
+                  <%= post.title %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+    </div>
+    <script src="javascripts/profile.js"></script>
+    </body>
+    </html>

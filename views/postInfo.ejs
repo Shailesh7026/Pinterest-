@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="/stylesheets/postInfo.css">
+  <link rel="stylesheet" href="/stylesheets/feed.css">
+
+<body>
+
+  <%- include('common/navbar.ejs') -%>
+    <div class="visited-post">
+      <div class="post-div-visited">
+        <div class="post-visited">
+          <div class="post-content">
+            <% if (postCurrent.postFile.endsWith('.mp4')) { %>
+              <video id="post-video-visited" src="/images/uploads/<%= postCurrent.postFile %>" autoplay muted
+                loop></video>
+              <% } else { %>
+                <img id="post-img-visited" src="/images/uploads/<%= postCurrent.postFile %>" alt="post-img">
+                <% } %>
+          </div>
+        </div>
+        <div class="post-info">
+          <div class="post-nav">
+            <div class="links-visited">
+              <div class="share-visited">
+                <span class="material-symbols-outlined icon">
+                  share
+                </span>
+              </div>
+              <div class="download-visited">
+                <span class="material-symbols-outlined icon">
+                  download
+                </span>
+              </div>
+              <div class="save-btn">
+                Save
+              </div>
+            </div>
+          </div>
+          <div class="user-info-visited">
+            <div class="title-visited">
+              <h2>
+                <%= postCurrent.title %>
+              </h2>
+              <p>
+                <%= postCurrent.description %>
+              </p>
+            </div>
+            <div class="user-visited">
+              <div class="profile-img-visited"><img src="/images/uploads/<%= postCurrent.user.profileImage %>" alt="">
+              </div>
+              <div class="user-details">
+                <div class="user-details">
+                  <a href="#">
+                    <%= postCurrent.user.username %>
+                  </a>
+                  <p class="date">
+                    <%= postCurrent.time.toLocaleDateString() %>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="comments">
+            <div class="comments-nav">
+              <p>Comments</p>
+              <span id="arrow" class="material-symbols-outlined">
+                keyboard_control_key
+              </span>
+            </div>
+            <div class="comments-aria">
+              <% 
+                const sortedComments = postCurrent.comments
+                  .sort((a, b) => b.CommentTime - a.CommentTime);
+            
+                if (sortedComments.length === 0) { %>
+                  <center><p>No comments yet in this post.</p></center>
+                <% } else {
+                  sortedComments.forEach(comment => { 
+                %>
+                    <div class="user-comment">
+                      <div class="user-visited">
+                        <div class="profile-img-visited">
+                          <img src="/images/uploads/<%= comment.user.profileImage %>" alt="">
+                        </div>
+                        <a href="#"><%= comment.user.username %></a>
+                        <p class="date"><%= comment.CommentTime.toLocaleDateString() %> </p>
+                      </div>
+                      <div class="comment-div">
+                        <p><%= comment.comment %></p>
+                      </div>
+                    </div>
+                <% }) } %>
+            </div>
+            
+            <form action="/postInfo/comment/<%= postId  %>" method="post">
+              <div class="comment-input">
+                <textarea class="detail" maxlength="500" name="comment" placeholder="Type Comment Here"></textarea>
+                <button type="submit" class="send-btn-visited"><span class="material-symbols-outlined">
+                    send
+                  </span></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <center>
+      <h1 class="pin-heading">More to explore</h1>
+    </center>
+
+    <div class="feeds">
+      <% posts.forEach(post=> { %>
+        <div class="post-div-feed">
+          <a href="/postInfo/<%= post._id %>">
+            <div class="post-feed">
+              <div class="post-content">
+                <% if (post.postFile.endsWith('.mp4')) { %>
+                  <video id="post-video" src="/images/uploads/<%= post.postFile %>" autoplay muted loop></video>
+                  <% } else { %>
+                    <img id="post-img" src="/images/uploads/<%= post.postFile %>" alt="post-img">
+                    <% } %>
+              </div>
+              <div class="hover-section">
+                <div class="hover-glass"></div>
+                <div class="save-btn-feed">Save</div>
+                <div class="links">
+                  <div class="share">
+                    <span class="material-symbols-outlined icon">share</span>
+                  </div>
+                  <div class="download">
+                    <span class="material-symbols-outlined icon">download</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <div class="post-info-feed">
+            <div class="title">
+              <p>
+                <%= post.title %>
+              </p>
+            </div>
+            <div class="user-info-feed">
+              <div class="user-profile-img">
+                <img src="/images/uploads/<%= post.user.profileImage %>" alt="profile img">
+              </div>
+              <div class="user-name">
+                <p>
+                  <%= post.user.username %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+
+
+    <script src="/javascripts/postInfo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="/stylesheets/add.css">
+
+</head>
+<body>
+
+    <% if (isLogin) { %>
+        
+        <!-- show this nav if user logend in -->
+        <nav>
+            <div class="nav-bar">
+                <div class="logo">
+                    <a href="/feed"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+                            alt="logo" /></a>
+                </div>
+      
+                <a href="/feed" class="link">
+                    <p>Home</p>
+                </a>
+                <a href="/add-post" class="link"><span class="material-symbols-outlined"> add </span></a>
+      
+                <div class="search">
+                    <span class="material-symbols-outlined" id="search-icon"> search </span>
+                    <input type="text" placeholder="Search" disabled id="fakeInput">
+                    <div class="search-div">
+                        <div class="search-input"><input type="text" id="search-input" name="search" placeholder="Search">
+                        </div>
+                        <div class="search-widgets-div">
+      
+                            <h3>Recent Searches</h3>
+                            <div class="search-tags">
+                                <div class="tag"><span class="material-symbols-outlined"> search </span>
+                                    <p>tage 1</p>
+                                </div>
+                                <div class="tag"><span class="material-symbols-outlined"> search </span>
+                                    <p>wallpaper</p>
+                                </div>
+                                <div class="tag"><span class="material-symbols-outlined"> search </span>
+                                    <p>anime edits</p>
+                                </div>
+                                <div class="tag"><span class="material-symbols-outlined"> search </span>
+                                    <p>i dont think so</p>
+                                </div>
+                                <div class="tag"><span class="material-symbols-outlined"> search </span>
+                                    <p>oh my god this is overflowing </p>
+                                </div>
+                                <div class="tag"><span class="material-symbols-outlined"> search </span>
+                                    <p>this is lone heaidng </p>
+                                </div>
+                                <div class="tag"><span class="material-symbols-outlined"> search </span>
+                                    <p>study hard to be successfull in life</p>
+                                </div>
+                            </div>
+                            <h3>Popular in Pinterest</h3>
+                            <div class="search-suggestions">
+                                <div class="search-suggestion-widget">
+                                    <div class="search-widget-img"><img
+                                            src="https://images.unsplash.com/photo-1703615318360-788893a586d8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8"
+                                            alt="photo"></div>
+                                    <div class="search-widget-title">
+                                        <h3>Black potratit ideas</h3>
+                                    </div>
+                                </div>
+                                <div class="search-suggestion-widget">
+                                    <div class="search-widget-img"><img
+                                            src="https://images.unsplash.com/photo-1703615318360-788893a586d8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8"
+                                            alt="photo"></div>
+                                    <div class="search-widget-title">
+                                        <h3>Black potratit ideas</h3>
+                                    </div>
+                                </div>
+                                <div class="search-suggestion-widget">
+                                    <div class="search-widget-img"><img
+                                            src="https://images.unsplash.com/photo-1703615318360-788893a586d8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8"
+                                            alt="photo"></div>
+                                    <div class="search-widget-title">
+                                        <h3>Black potratit ideas</h3>
+                                    </div>
+                                </div>
+                                <div class="search-suggestion-widget">
+                                    <div class="search-widget-img"><img
+                                            src="https://images.unsplash.com/photo-1703615318360-788893a586d8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8"
+                                            alt="photo"></div>
+                                    <div class="search-widget-title">
+                                        <h3>Black potratit ideas</h3>
+                                    </div>
+                                </div>
+                                <div class="search-suggestion-widget">
+                                    <div class="search-widget-img"><img
+                                            src="https://images.unsplash.com/photo-1703615318360-788893a586d8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8"
+                                            alt="photo"></div>
+                                    <div class="search-widget-title">
+                                        <h3>Black potratit ideas</h3>
+                                    </div>
+                                </div>
+                                <div class="search-suggestion-widget">
+                                    <div class="search-widget-img"><img
+                                            src="https://images.unsplash.com/photo-1703615318360-788893a586d8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8"
+                                            alt="photo"></div>
+                                    <div class="search-widget-title">
+                                        <h3>Black potratit ideas</h3>
+                                    </div>
+                                </div>
+                                <div class="search-suggestion-widget">
+                                    <div class="search-widget-img"><img
+                                            src="https://images.unsplash.com/photo-1703615318360-788893a586d8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8"
+                                            alt="photo"></div>
+                                    <div class="search-widget-title">
+                                        <h3>Black potratit ideas</h3>
+                                    </div>
+                                </div>
+                                <div class="search-suggestion-widget">
+                                    <div class="search-widget-img"><img
+                                            src="https://images.unsplash.com/photo-1703615318360-788893a586d8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8"
+                                            alt="photo"></div>
+                                    <div class="search-widget-title">
+                                        <h3>Black potratit ideas</h3>
+                                    </div>
+                                </div>
+                                <div class="search-suggestion-widget">
+                                    <div class="search-widget-img"><img
+                                            src="https://images.unsplash.com/photo-1703615318360-788893a586d8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8"
+                                            alt="photo"></div>
+                                    <div class="search-widget-title">
+                                        <h3>Black potratit ideas</h3>
+                                    </div>
+                                </div>
+      
+      
+                            </div>
+      
+                        </div>
+                    </div>
+                </div>
+      
+               
+                <a href="/profile">
+                <div id="profile-icon">
+                  <img src="/images/uploads/<%= user.profileImage %>" alt="">
+                </div>
+              </a>
+                <div id="drop-down-icon">
+                    <span class="material-symbols-outlined" id="drop-down-symbol"> expand_more </span>
+                    <div class="drop-down-div">
+                        <p class="separator-heading">Currently in</p>
+                        <div class="current-account-login">
+                            <div class="profile-img"><img
+                                    src="/images/uploads/<%= user.profileImage %>" alt="">
+                            </div>
+                            <div class="user-info">
+                                <p><%= user.username %></p>
+                                <p><%= user.email %></p>
+                            </div>
+      
+                        </div>
+                        <p class="separator-heading">More Options</p>
+                        <a href="/profile" class="drop-down-link">
+                            <p>My profile</p>
+                        </a>
+                        <a href="https://policy.pinterest.com/en-gb/privacy-policy" class="drop-down-link">
+                            <p>See Privacy Policy</p>
+                        </a>
+                        <a href="https://in.pinterest.com/public-beta/" class="drop-down-link">
+                            <p>Be a beta Tester</p>
+                        </a>
+                        <a href="/logout" class="drop-down-link">
+                            <p>Add Account</p>
+                        </a>
+                        <a href="/logout" class="drop-down-link">
+                            <p>Log out</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+      
+      
+        </nav>
+
+    <% } else { %>
+
+      <!-- show this nav if user not logged in -->
+    <nav>
+        <div class="nav-bar">
+            <div class="logo">
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+                        alt="logo" /></a>
+                        <p>Pinterest</p>
+            </div>
+
+            <div class="nav-links">
+                <a href="/register" class="link">
+                    <p>Sing up</p>
+                </a>
+                <a href="/login" class="link">
+                    <p>Login</p>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <% } %>
+
+     
+    
+
+
+
+  <script src="/javascripts/navbar.js"></script>
+</body>
+

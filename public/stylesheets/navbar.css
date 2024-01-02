@@ -1,0 +1,280 @@
+
+.nav-bar{
+  display: flex;
+  width: 99vw;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-bar .logo img{
+  width: 30px;
+  height: 30px;
+}
+
+.nav-bar .link{
+  text-decoration: none;
+  display: flex;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: sans-serif;
+  padding: 10px 10px;
+  border-radius: 50px;
+}
+
+.active{
+  background-color: black;
+  color: white; 
+}
+
+.search{
+position: relative;
+  display: flex;
+  width: 90%;
+  align-items: center;
+  cursor: pointer;
+}
+.nav-bar .search input{
+  background-color: rgb(225, 225, 225);
+  border-radius: 30px;
+  width: 97%;
+  border:none;
+  position: sticky;
+  top:10px;
+  height: 10px;
+  padding: 15px;
+}
+
+.nav-bar .search input:focus{
+  background-color: rgb(240, 255, 255);
+  border-radius: 30px;
+  outline:2px solid rgba(1, 247, 255, 0.441);
+}
+
+.nav-bar .search{
+  background-color: rgb(225, 225, 225);
+  border-radius: 50px;
+  
+}
+#fakeInput{
+pointer-events: none;
+}
+.nav-bar .search span{
+  padding:10px ;
+}
+
+.search-div{
+  z-index: 9;
+  overflow-y: scroll;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  width: 100%;
+  height: 80vh;
+  background-color: rgb(241, 241, 241);
+  border-radius: 20px;
+}
+
+.search-widgets-div{
+  padding: 1.5rem;
+}
+.search-widgets-div h3{
+  font-family: sans-serif;
+  padding: 1.8rem 10px;
+}
+
+.search-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+ 
+}
+
+.tag{
+  font-size: 0.9rem;
+  padding-inline: 10px;
+  border-radius: 50px;
+  background-color: #ffff;
+  display: flex;
+  gap: 2px;
+  font-family: sans-serif;
+  align-items:center ;
+}
+.tag:hover{
+  background-color: #d5d5d5;
+}
+
+.search-suggestions{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+gap: 10px;
+padding: 5px;
+}
+
+.search-suggestion-widget{
+flex-wrap: wrap;
+width: 32%;
+display: flex;
+align-items: center;
+border-radius: 20px;
+overflow: hidden;
+height: 100px;
+background-color: #ffff;
+
+}
+
+.search-suggestion-widget:hover{
+background-color: #d1cfcf;
+}
+
+.search-widget-img{
+width: 30%;
+height: 100%;
+}
+.search-widget-img img{
+object-fit: cover;
+width: 100%;
+height: 100%;
+}
+.search-widget-title{
+width: 70%;
+text-align: center;
+}
+
+
+#bell-icon{
+  cursor: pointer;
+  padding: 10px;
+  margin:10px;
+}
+
+#profile-icon img{
+  cursor: pointer;
+  width: 30px;
+  object-fit: cover;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 100%;
+}
+
+#drop-down-icon{
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  margin:10px;
+}
+
+
+.drop-down-div{
+  z-index: 9;
+  display: none;
+  left: -250px;
+  top: 60px;
+  border-radius: 10px;
+  background-color: rgb(241, 237, 237);
+  position: absolute;
+  padding:10px;
+  width: 250px;
+}
+
+.separator-heading{
+  font-size: 0.7rem;
+  font-weight: 100;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.current-account-login{
+  display: flex;
+  align-items: center;
+}
+
+.current-account-login .profile-img{
+  width:70px;
+  height: 70px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.profile-img img{
+width: 100%;
+height: 100%;
+}
+
+.current-account-login .user-info{
+
+  padding:30px 10px;
+
+}
+.current-account-login .user-info p{
+  margin: 0;
+  overflow: hidden;
+  width: 150px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.drop-down-link{
+  width: 100%;
+  padding-inline-start: 10px;
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+}
+
+
+@media (max-width:900px) {
+  .search-suggestion-widget{
+    
+    width: 100%;
+  }
+}
+
+@media (max-width:500px) {
+  .nav-bar .link{
+      margin: 5px;
+      padding-inline: 15px;
+      border-radius: 50px;
+  }
+  .search{
+      width: fit-content;
+  }
+ #fakeInput{
+  display: none;
+}
+
+  .search-div{
+    top: 50px;
+    left: -150px;
+    padding: 5px;
+    width: 82vw;
+    height: 80vh;
+    border-radius: 20px;
+  }
+}
+
+#search-input{
+  background-color: #ffff;
+}
+
+
+
+/* nav bar 2 design  */
+
+.logo{
+display: flex;
+align-items: center;
+}
+.logo p{
+font-weight: 630;
+font-size: 1.3rem;
+color: red;
+font-family: sans-serif;
+}
+.nav-links{
+display: flex;
+gap: 5px;
+}
+
+

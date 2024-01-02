@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="stylesheets/feed.css">
+</head>
+<body>
+    <%- include('common/navbar.ejs') -%>
+   
+    <!--------------------------->
+    <div class="container">
+
+      <div class="feeds">
+        <% posts.forEach(post => { %>
+          <div class="post-div-feed">
+            <a href="/postInfo/<%= post._id %>">
+              <div class="post-feed">
+                <div class="post-content">
+                  <% if (post.postFile.endsWith('.mp4')) { %>
+                    <video id="post-video" src="/images/uploads/<%= post.postFile %>" autoplay muted loop></video>
+                  <% } else { %>
+                    <img id="post-img" src="/images/uploads/<%= post.postFile %>" alt="post-img">
+                  <% } %>
+                </div>
+                <div class="hover-section">
+                  <div class="hover-glass"></div>
+                  <div class="save-btn-feed">Save</div>
+                  <div class="links">
+                    <div class="share">
+                      <span class="material-symbols-outlined icon">share</span>
+                    </div>
+                    <div class="download">
+                      <span class="material-symbols-outlined icon">download</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="post-info-feed">
+              <div class="title">
+                <p><%= post.title %></p>
+              </div>
+              <div class="user-info-feed">
+                <div class="user-profile-img">
+                  <img src="/images/uploads/<%= post.user.profileImage %>" alt="profile img">
+                </div>
+                <div class="user-name">
+                  <p><%= post.user.username %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+
+    </div>
+  </body>
+</html>
