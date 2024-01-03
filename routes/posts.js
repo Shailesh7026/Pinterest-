@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://127.0.0.1:27017/PinterestDB")
+mongoose.connect("mongodb://mongo:f6BChdGDE1-B4af14GEegc11Gh55cBah@roundhouse.proxy.rlwy.net:42207")
 
 const postSchema = new mongoose.Schema({
     postFile: {
