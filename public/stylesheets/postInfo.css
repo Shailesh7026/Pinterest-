@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+.post-info{
+    width: 50%;
+}
+
 .visited-post{
     display: flex;
     height:90%;
